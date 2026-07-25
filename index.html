@@ -2,48 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Academic website of Caterina B. Leimer Saglio, researcher in numerical modelling of brain electrophysiology." />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="Academic website of Caterina B. Leimer Saglio."
+  />
   <meta name="theme-color" content="#f5f2eb" />
+
   <title>Caterina B. Leimer Saglio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Back to homepage">
+    <a class="brand" href="#home" aria-label="Homepage">
       <span class="brand-mark">CL</span>
       <span class="brand-name">Caterina B. Leimer Saglio</span>
     </a>
 
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
       <span></span>
       <span></span>
       <span class="sr-only">Open navigation</span>
     </button>
 
-    <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
+    <nav
+      id="main-navigation"
+      class="main-navigation"
+      aria-label="Main navigation"
+    >
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noreferrer">CV</a>
+      <a
+        class="nav-cta"
+        href="assets/CV.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        CV
+      </a>
     </nav>
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="home" class="hero section">
       <div class="hero-copy reveal">
         <p class="eyebrow">Mathematical and numerical modelling of the brain</p>
-        <h1>Caterina B.<br />Leimer Saglio</h1>
-        <p class="hero-role">PhD Researcher · MOX Laboratory<br />Politecnico di Milano</p>
-        <p class="hero-intro">
-          I develop mathematical models and numerical methods to study brain electrophysiology,
-          neurological disorders and their interaction with metabolic and protein-spreading dynamics.
+
+        <h1>
+          Caterina B.<br />
+          Leimer Saglio
+        </h1>
+
+        <p class="hero-role">
+          PhD Researcher · MOX Laboratory<br />
+          Politecnico di Milano
         </p>
+
+        <p class="hero-intro">
+          I develop mathematical models and numerical methods to study brain
+          electrophysiology, neurological disorders and their interaction with
+          metabolic and protein-spreading dynamics.
+        </p>
+
         <div class="hero-actions">
           <a class="button button-dark" href="#research">Explore my research</a>
           <a class="text-link" href="#contact">Get in touch <span>↗</span></a>
@@ -52,11 +92,12 @@
 
       <div class="hero-visual reveal">
         <div class="portrait-frame">
-          <div class="portrait-placeholder" aria-label="Profile photo placeholder">
+          <div class="portrait-placeholder" aria-label="Profile placeholder">
             <div class="portrait-head"></div>
             <div class="portrait-body"></div>
             <span>Add your photo</span>
           </div>
+
           <div class="portrait-label">
             <span>Based in</span>
             <strong>Milano, Italy</strong>
@@ -70,6 +111,7 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="about section">
       <div class="section-heading reveal">
         <p class="eyebrow">About</p>
@@ -78,21 +120,50 @@
 
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>I am a PhD researcher at the Department of Mathematics of Politecnico di Milano and a member of the MOX Laboratory.</p>
-          <p>My work lies at the intersection of numerical analysis, computational neuroscience and scientific computing.</p>
-          <p>I am particularly interested in accurate and efficient simulations of physiological and pathological neuronal activity, including epilepsy and cerebral ischemia.</p>
-          <p>I also study multiphysics couplings between electrophysiology, cellular metabolism and the spreading of pathological proteins.</p>
+          <p>
+            I am a PhD researcher at the Department of Mathematics of
+            Politecnico di Milano and a member of the MOX Laboratory.
+          </p>
+
+          <p>
+            My work lies at the intersection of numerical analysis,
+            computational neuroscience and scientific computing.
+          </p>
+
+          <p>
+            I am particularly interested in accurate and efficient simulations
+            of physiological and pathological neuronal activity, including
+            epilepsy and cerebral ischemia.
+          </p>
+
+          <p>
+            I also study multiphysics couplings between electrophysiology,
+            cellular metabolism and the spreading of pathological proteins.
+          </p>
         </div>
 
         <dl class="facts reveal">
-          <div><dt>Position</dt><dd>PhD Researcher</dd></div>
-          <div><dt>Institution</dt><dd>Politecnico di Milano</dd></div>
-          <div><dt>Laboratory</dt><dd>MOX Laboratory</dd></div>
-          <div><dt>Field</dt><dd>Numerical Analysis and Computational Neuroscience</dd></div>
+          <div>
+            <dt>Position</dt>
+            <dd>PhD Researcher</dd>
+          </div>
+          <div>
+            <dt>Institution</dt>
+            <dd>Politecnico di Milano</dd>
+          </div>
+          <div>
+            <dt>Laboratory</dt>
+            <dd>MOX Laboratory</dd>
+          </div>
+          <div>
+            <dt>Field</dt>
+            <dd>Numerical Analysis and Computational Neuroscience</dd>
+          </div>
         </dl>
       </div>
     </section>
 
+    <!-- RESEARCH -->
     <section id="research" class="research section section-dark">
       <div class="section-heading reveal">
         <p class="eyebrow">Research interests</p>
@@ -104,7 +175,11 @@
           <span class="card-number">01</span>
           <div>
             <h3>Brain Electrophysiology</h3>
-            <p>Mathematical and numerical modelling of neuronal electrical activity, with emphasis on physiological propagation and pathological events such as epileptic seizures.</p>
+            <p>
+              Mathematical and numerical modelling of neuronal electrical
+              activity, with emphasis on physiological propagation and
+              pathological events such as epileptic seizures.
+            </p>
           </div>
           <span class="card-arrow">↗</span>
         </article>
@@ -113,7 +188,11 @@
           <span class="card-number">02</span>
           <div>
             <h3>Electro-metabolic Coupling</h3>
-            <p>Coupled models connecting membrane potentials, ion concentrations, oxygen, ATP dynamics and tissue swelling in cerebral ischemia.</p>
+            <p>
+              Coupled models connecting membrane potentials, ion
+              concentrations, oxygen, ATP dynamics and tissue swelling in
+              cerebral ischemia.
+            </p>
           </div>
           <span class="card-arrow">↗</span>
         </article>
@@ -122,7 +201,11 @@
           <span class="card-number">03</span>
           <div>
             <h3>Protein Spreading</h3>
-            <p>Investigation of the interaction between abnormal electrophysiological activity and the spreading of pathological proteins in the brain.</p>
+            <p>
+              Investigation of the interaction between abnormal
+              electrophysiological activity and the spreading of pathological
+              proteins in the brain.
+            </p>
           </div>
           <span class="card-arrow">↗</span>
         </article>
@@ -131,200 +214,188 @@
           <span class="card-number">04</span>
           <div>
             <h3>Advanced Numerical Methods</h3>
-            <p>High-order discontinuous Galerkin methods on polytopal meshes, adaptive strategies and domain decomposition techniques for large-scale simulations.</p>
+            <p>
+              High-order discontinuous Galerkin methods on polytopal meshes,
+              adaptive strategies and domain decomposition techniques for
+              large-scale simulations.
+            </p>
           </div>
           <span class="card-arrow">↗</span>
         </article>
       </div>
     </section>
 
+    <!-- PUBLICATIONS -->
     <section id="publications" class="publications section">
-  <div class="section-heading publications-heading reveal">
-    <p class="eyebrow">Scientific output</p>
+      <div class="section-heading publications-heading reveal">
+        <p class="eyebrow">Scientific output</p>
 
-    <div>
-      <h2>Publications.</h2>
-
-      <a
-        class="text-link scholar-link"
-        href="#"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Google Scholar <span>↗</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- =====================================================
-       SUBMITTED PAPERS
-  ====================================================== -->
-
-  <div class="publication-category reveal">
-    <h3 class="publication-category-title">
-      Submitted Papers
-    </h3>
-
-    <div class="publication-year-group">
-      <h4 class="publication-year">2026</h4>
-
-      <article class="publication-entry">
-        <p>
-          <strong>C. B. Leimer Saglio</strong>,
-          M. Corti, S. Pagani and P. F. Antonietti.
+        <div>
+          <h2>Publications.</h2>
           <a
-            href="https://arxiv.org/abs/2606.24646"
+            class="text-link scholar-link"
+            href="#"
             target="_blank"
             rel="noreferrer"
           >
-            The lymph 2.0 library: p-adaptive algorithms and parallel
-            assembly strategies for polytopal discontinuous Galerkin methods.
+            Google Scholar <span>↗</span>
           </a>
-          <em>Preprint, arXiv:2606.24646.</em>
-        </p>
-      </article>
-    </div>
+        </div>
+      </div>
 
-    <div class="publication-year-group">
-      <h4 class="publication-year">2025</h4>
+      <!-- Submitted Papers -->
+      <div class="publication-category reveal">
+        <h3 class="publication-category-title">Submitted Papers</h3>
 
-      <article class="publication-entry">
-        <p>
-          <strong>C. B. Leimer Saglio</strong>,
-          M. Corti, S. Pagani and P. F. Antonietti.
-          <a
-            href="https://arxiv.org/abs/2511.10369"
-            target="_blank"
-            rel="noreferrer"
-          >
-            A novel mathematical and computational framework of
-            amyloid-beta triggered seizure dynamics in Alzheimer’s disease.
-          </a>
-          <em>Preprint, arXiv:2511.10369.</em>
-        </p>
-      </article>
+        <div class="publication-year-group">
+          <h4 class="publication-year">2026</h4>
 
-      <article class="publication-entry">
-        <p>
-          F. Daniele,
-          <strong>C. B. Leimer Saglio</strong>,
-          S. Pagani and P. F. Antonietti.
-          <a
-            href="https://arxiv.org/abs/2509.22863"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Mathematical and numerical modeling of coupled oxygen dynamics
-            and neuronal electrophysiology.
-          </a>
-          <em>Preprint, arXiv:2509.22863.</em>
-        </p>
-      </article>
-    </div>
-  </div>
+          <article class="publication-entry">
+            <p>
+              <strong>Leimer Saglio, C.B.</strong>, Corti, M., Pagani, S. and
+              Antonietti, P.F.
+              <a
+                href="https://arxiv.org/abs/2606.24646"
+                target="_blank"
+                rel="noreferrer"
+              >
+                The lymph 2.0 library: p-adaptive algorithms and parallel
+                assembly strategies for polytopal DG methods.
+              </a>
+              <em>arXiv:2606.24646.</em>
+            </p>
+          </article>
+        </div>
 
-  <!-- =====================================================
-       PEER-REVIEWED JOURNAL PAPERS
-  ====================================================== -->
+        <div class="publication-year-group">
+          <h4 class="publication-year">2025</h4>
 
-  <div class="publication-category reveal">
-    <h3 class="publication-category-title">
-      Peer-Reviewed Journal Papers
-    </h3>
+          <article class="publication-entry">
+            <p>
+              <strong>Leimer Saglio, C.B.</strong>, Corti, M., Pagani, S. and
+              Antonietti, P.F.
+              <a
+                href="https://arxiv.org/abs/2511.10369"
+                target="_blank"
+                rel="noreferrer"
+              >
+                A novel mathematical and computational framework of amyloid-beta
+                triggered seizure dynamics in Alzheimer’s disease.
+              </a>
+              <em>arXiv:2511.10369.</em>
+            </p>
+          </article>
 
-    <div class="publication-year-group">
-      <h4 class="publication-year">2026</h4>
+          <article class="publication-entry">
+            <p>
+              Daniele, F., <strong>Leimer Saglio, C.B.</strong>, Pagani, S. and
+              Antonietti, P.F.
+              <a
+                href="https://arxiv.org/abs/2509.22863"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mathematical and numerical modeling of coupled oxygen dynamics
+                and neuronal electrophysiology.
+              </a>
+              <em>arXiv:2509.22863.</em>
+            </p>
+          </article>
+        </div>
+      </div>
 
-      <article class="publication-entry">
-        <p>
-          <strong>C. B. Leimer Saglio</strong>,
-          S. Pagani, M. Corti and P. F. Antonietti.
-          <a
-            href="https://www.sciencedirect.com/science/article/pii/S0898122125005231"
-            target="_blank"
-            rel="noreferrer"
-          >
-            A high-order discontinuous Galerkin method for the numerical
-            modeling of epileptic seizures.
-          </a>
-          <em>Computers &amp; Mathematics with Applications</em>,
-          205, 112–131, 2026.
-        </p>
-      </article>
-    </div>
+      <!-- Peer-Reviewed Journal Papers -->
+      <div class="publication-category reveal">
+        <h3 class="publication-category-title">
+          Peer-Reviewed Journal Papers
+        </h3>
 
-    <div class="publication-year-group">
-      <h4 class="publication-year">2025</h4>
+        <div class="publication-year-group">
+          <h4 class="publication-year">2026</h4>
 
-      <article class="publication-entry">
-        <p>
-          <strong>C. B. Leimer Saglio</strong>,
-          S. Pagani and P. F. Antonietti.
-          <a
-            href="https://www.sciencedirect.com/science/article/pii/S0045782525005213"
-            target="_blank"
-            rel="noreferrer"
-          >
-            A p-adaptive polytopal discontinuous Galerkin method for
-            high-order approximation of brain electrophysiology.
-          </a>
-          <em>Computer Methods in Applied Mechanics and Engineering</em>,
-          446, 118249, 2025.
-        </p>
-      </article>
-    </div>
-  </div>
+          <article class="publication-entry">
+            <p>
+              <strong>Leimer Saglio, C.B.</strong>, Pagani, S., Corti, M. and
+              Antonietti, P.F.
+              <a
+                href="https://www.sciencedirect.com/science/article/pii/S0898122125005231"
+                target="_blank"
+                rel="noreferrer"
+              >
+                A high-order discontinuous Galerkin method for the numerical
+                modeling of epileptic seizures.
+              </a>
+              <em>Computers &amp; Mathematics with Applications</em>, 205,
+              112–131 (2026).
+            </p>
+          </article>
+        </div>
 
-  <!-- =====================================================
-       CONFERENCE PROCEEDINGS
-  ====================================================== -->
+        <div class="publication-year-group">
+          <h4 class="publication-year">2025</h4>
 
-  <div class="publication-category reveal">
-    <h3 class="publication-category-title">
-      Conference Proceedings
-    </h3>
+          <article class="publication-entry">
+            <p>
+              <strong>Leimer Saglio, C.B.</strong>, Pagani, S. and Antonietti,
+              P.F.
+              <a
+                href="https://www.sciencedirect.com/science/article/pii/S0045782525005213"
+                target="_blank"
+                rel="noreferrer"
+              >
+                A p-adaptive polytopal discontinuous Galerkin method for
+                high-order approximation of brain electrophysiology.
+              </a>
+              <em>Computer Methods in Applied Mechanics and Engineering</em>,
+              446, 118249 (2025).
+            </p>
+          </article>
+        </div>
+      </div>
 
-    <div class="publication-year-group">
-      <h4 class="publication-year">2025</h4>
+      <!-- Conference Proceedings -->
+      <div class="publication-category reveal">
+        <h3 class="publication-category-title">Conference Proceedings</h3>
 
-      <article class="publication-entry">
-        <p>
-          <strong>C. B. Leimer Saglio</strong>,
-          S. Pagani and P. F. Antonietti.
-          <span class="publication-title">
-            A massively parallel non-overlapping Schwarz preconditioner
-            for PolyDG methods in brain electrophysiology.
-          </span>
-        </p>
-      </article>
-    </div>
-  </div>
+        <div class="publication-year-group">
+          <h4 class="publication-year">2025</h4>
 
-  <!-- =====================================================
-       THESES
-  ====================================================== -->
+          <article class="publication-entry">
+            <p>
+              <strong>Leimer Saglio, C.B.</strong>, Pagani, S. and Antonietti,
+              P.F.
+              <span class="publication-title">
+                A massively parallel non-overlapping Schwarz preconditioner for
+                PolyDG methods in brain electrophysiology.
+              </span>
+            </p>
+          </article>
+        </div>
+      </div>
 
-  <div class="publication-category reveal">
-    <h3 class="publication-category-title">
-      Theses
-    </h3>
+      <!-- Theses -->
+      <div class="publication-category reveal">
+        <h3 class="publication-category-title">Theses</h3>
 
-    <div class="publication-year-group">
-      <h4 class="publication-year">2023</h4>
+        <div class="publication-year-group">
+          <h4 class="publication-year">2026</h4>
 
-      <article class="publication-entry">
-        <p>
-          <strong>C. B. Leimer Saglio.</strong>
-          <span class="publication-title">
-            An adaptive discontinuous Galerkin method for the numerical modeling of epileptic seizures.
-          </span>
-          Master Thesis in Mathematical Engineering: Computational Science in Engineering (2023).
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
+          <article class="publication-entry">
+            <p>
+              <strong>Leimer Saglio, C.B.</strong>
+              <span class="publication-title">
+                Mathematical and numerical modelling of brain electrophysiology
+                and neurological disorders.
+              </span>
+              PhD thesis in Mathematical Models and Methods in Engineering,
+              Politecnico di Milano, 2026.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- NEWS -->
     <section id="news" class="news section">
       <div class="section-heading reveal">
         <p class="eyebrow">Latest news</p>
@@ -332,23 +403,267 @@
       </div>
 
       <div class="news-grid">
-        <article class="news-card featured reveal">
-          <div class="news-date"><span>JUL</span><strong>2026</strong></div>
-          <div><p class="news-type">Conference</p><h3>WCCM–ECCOMAS 2026</h3><p>Presentation of recent work on brain electrophysiology and its interaction with protein-spreading dynamics in Munich.</p></div>
+        <article
+          class="news-card featured reveal"
+          tabindex="0"
+          role="button"
+          data-modal="news-modal-1"
+          aria-label="Open details about WCCM–ECCOMAS 2026"
+        >
+          <div class="news-date">
+            <span>JUL</span>
+            <strong>2026</strong>
+          </div>
+
+          <div>
+            <p class="news-type">Conference</p>
+            <h3>WCCM–ECCOMAS 2026</h3>
+            <p>
+              Presentation of recent work on brain electrophysiology and its
+              interaction with protein-spreading dynamics in Munich.
+            </p>
+            <span class="news-more">View details ↗</span>
+          </div>
         </article>
 
-        <article class="news-card reveal">
-          <div class="news-date"><span>JUN</span><strong>2026</strong></div>
-          <div><p class="news-type">Publication</p><h3>lymph 2.0</h3><p>New developments in the open-source MATLAB library for high-order polytopal discontinuous Galerkin methods.</p></div>
+        <article
+          class="news-card reveal"
+          tabindex="0"
+          role="button"
+          data-modal="news-modal-2"
+          aria-label="Open details about lymph 2.0"
+        >
+          <div class="news-date">
+            <span>JUN</span>
+            <strong>2026</strong>
+          </div>
+
+          <div>
+            <p class="news-type">Publication</p>
+            <h3>lymph 2.0</h3>
+            <p>
+              New developments in the open-source MATLAB library for high-order
+              polytopal discontinuous Galerkin methods.
+            </p>
+            <span class="news-more">View details ↗</span>
+          </div>
         </article>
 
-        <article class="news-card reveal">
-          <div class="news-date"><span>2025</span><strong>OSLO</strong></div>
-          <div><p class="news-type">Visiting period</p><h3>Simula Research Laboratory</h3><p>Research visit focused on coupled bulk-network models for electrophysiological propagation.</p></div>
+        <article
+          class="news-card reveal"
+          tabindex="0"
+          role="button"
+          data-modal="news-modal-3"
+          aria-label="Open details about Simula Research Laboratory"
+        >
+          <div class="news-date">
+            <span>2025</span>
+            <strong>OSLO</strong>
+          </div>
+
+          <div>
+            <p class="news-type">Visiting period</p>
+            <h3>Simula Research Laboratory</h3>
+            <p>
+              Research visit focused on coupled bulk-network models for
+              electrophysiological propagation.
+            </p>
+            <span class="news-more">View details ↗</span>
+          </div>
         </article>
       </div>
     </section>
 
+    <!-- NEWS MODALS -->
+    <div
+      id="news-modal-1"
+      class="news-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="news-modal-title-1"
+    >
+      <div class="news-modal-backdrop" data-close-modal></div>
+
+      <div class="news-modal-window">
+        <button
+          class="news-modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close window"
+        >
+          ×
+        </button>
+
+        <div class="news-modal-header">
+          <p class="news-modal-kicker">Conference · July 2026</p>
+          <h3 id="news-modal-title-1">WCCM–ECCOMAS 2026</h3>
+          <p class="news-modal-subtitle">
+            World Congress on Computational Mechanics and ECCOMAS Congress
+          </p>
+        </div>
+
+        <div class="news-modal-content">
+          <div class="news-modal-description">
+            <p>
+              Presentation of recent work on the interaction between neuronal
+              electrophysiology and pathological protein-spreading dynamics.
+            </p>
+
+            <p>
+              The contribution focuses on mathematical modelling and high-order
+              numerical methods for coupled brain dynamics.
+            </p>
+          </div>
+
+          <dl class="news-modal-details">
+            <div>
+              <dt>Location</dt>
+              <dd>Munich, Germany</dd>
+            </div>
+            <div>
+              <dt>Event</dt>
+              <dd>WCCM–ECCOMAS 2026</dd>
+            </div>
+            <div>
+              <dt>Topic</dt>
+              <dd>Electrophysiology and protein spreading</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Conference presentation</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="news-modal-2"
+      class="news-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="news-modal-title-2"
+    >
+      <div class="news-modal-backdrop" data-close-modal></div>
+
+      <div class="news-modal-window">
+        <button
+          class="news-modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close window"
+        >
+          ×
+        </button>
+
+        <div class="news-modal-header">
+          <p class="news-modal-kicker">Publication · June 2026</p>
+          <h3 id="news-modal-title-2">lymph 2.0</h3>
+          <p class="news-modal-subtitle">
+            A MATLAB library for polytopal discontinuous Galerkin methods
+          </p>
+        </div>
+
+        <div class="news-modal-content">
+          <div class="news-modal-description">
+            <p>
+              lymph 2.0 introduces p-adaptive algorithms and parallel assembly
+              strategies for high-order discontinuous Galerkin methods on
+              polytopal meshes.
+            </p>
+
+            <a
+              class="button button-dark modal-button"
+              href="https://arxiv.org/abs/2606.24646"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read the preprint ↗
+            </a>
+          </div>
+
+          <dl class="news-modal-details">
+            <div>
+              <dt>Year</dt>
+              <dd>2026</dd>
+            </div>
+            <div>
+              <dt>Software</dt>
+              <dd>MATLAB</dd>
+            </div>
+            <div>
+              <dt>Methods</dt>
+              <dd>PolyDG and p-adaptivity</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Submitted paper</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="news-modal-3"
+      class="news-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="news-modal-title-3"
+    >
+      <div class="news-modal-backdrop" data-close-modal></div>
+
+      <div class="news-modal-window">
+        <button
+          class="news-modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close window"
+        >
+          ×
+        </button>
+
+        <div class="news-modal-header">
+          <p class="news-modal-kicker">Visiting period · 2025</p>
+          <h3 id="news-modal-title-3">Simula Research Laboratory</h3>
+          <p class="news-modal-subtitle">Research visit in Oslo</p>
+        </div>
+
+        <div class="news-modal-content">
+          <div class="news-modal-description">
+            <p>
+              Research activity focused on coupled bulk-network models for
+              neuronal electrophysiology and remote activation through embedded
+              graph structures.
+            </p>
+          </div>
+
+          <dl class="news-modal-details">
+            <div>
+              <dt>Location</dt>
+              <dd>Oslo, Norway</dd>
+            </div>
+            <div>
+              <dt>Institution</dt>
+              <dd>Simula Research Laboratory</dd>
+            </div>
+            <div>
+              <dt>Period</dt>
+              <dd>January–April 2025</dd>
+            </div>
+            <div>
+              <dt>Research</dt>
+              <dd>Bulk-network coupling</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
     <section id="contact" class="contact section section-accent">
       <div class="contact-copy reveal">
         <p class="eyebrow">Contact</p>
@@ -356,8 +671,17 @@
       </div>
 
       <div class="contact-details reveal">
-        <a class="contact-email" href="mailto:YOUR_EMAIL@polimi.it">YOUR_EMAIL@polimi.it <span>↗</span></a>
-        <p>MOX Laboratory<br />Department of Mathematics<br />Politecnico di Milano<br />Piazza Leonardo da Vinci 32, Milano</p>
+        <a class="contact-email" href="mailto:YOUR_EMAIL@polimi.it">
+          YOUR_EMAIL@polimi.it <span>↗</span>
+        </a>
+
+        <p>
+          MOX Laboratory<br />
+          Department of Mathematics<br />
+          Politecnico di Milano<br />
+          Piazza Leonardo da Vinci 32, Milano
+        </p>
+
         <div class="social-links">
           <a href="#" target="_blank" rel="noreferrer">Google Scholar</a>
           <a href="#" target="_blank" rel="noreferrer">ORCID</a>
