@@ -1119,3 +1119,50 @@ button {
     transform: none;
   }
 }
+
+
+/* =========================================================
+   CORREZIONE DEFINITIVA ABOUT
+========================================================= */
+
+.about-grid {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 70px;
+}
+
+.about-text {
+  width: 100%;
+  max-width: 650px;
+  margin: 0;
+  padding: 0;
+
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+}
+
+.facts {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1000px) {
+  .about-grid {
+    margin-left: 0;
+    grid-template-columns: 1fr 0.75fr;
+    gap: 55px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-grid {
+    margin-left: 0;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
