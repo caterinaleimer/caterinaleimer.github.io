@@ -2,22 +2,32 @@ const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".main-navigation");
 const navLinks = document.querySelectorAll(".main-navigation a");
 
-menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  navigation.classList.toggle("open", !isOpen);
-  document.body.classList.toggle("menu-open", !isOpen);
-});
+if (menuButton && navigation) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    menuButton.setAttribute("aria-expanded", "false");
-    navigation.classList.remove("open");
-    document.body.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("open", !isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
   });
-});
 
-document.getElementById("current-year").textContent = new Date().getFullYear();
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuButton.setAttribute("aria-expanded", "false");
+      navigation.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
+
+const currentYear = document.getElementById("current-year");
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
 
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -38,3 +48,70 @@ if ("IntersectionObserver" in window) {
 } else {
   revealElements.forEach((element) => element.classList.add("visible"));
 }
+
+/* =========================================================
+   NEWS MODALS
+========================================================= */
+
+const newsCards = document.querySelectorAll("[data-modal]");
+const modalCloseButtons = document.querySelectorAll("[data-close-modal]");
+
+let activeModal = null;
+let lastFocusedElement = null;
+
+function openNewsModal(modalId) {
+  const modal = document.getElementById(modalId);
+
+  if (!modal) return;
+
+  lastFocusedElement = document.activeElement;
+  activeModal = modal;
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+
+  document.body.classList.add("menu-open");
+
+  const closeButton = modal.querySelector(".news-modal-close");
+  if (closeButton) {
+    closeButton.focus();
+  }
+}
+
+function closeNewsModal() {
+  if (!activeModal) return;
+
+  activeModal.classList.remove("open");
+  activeModal.setAttribute("aria-hidden", "true");
+
+  document.body.classList.remove("menu-open");
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+
+  activeModal = null;
+}
+
+newsCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    openNewsModal(card.dataset.modal);
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openNewsModal(card.dataset.modal);
+    }
+  });
+});
+
+modalCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeNewsModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeNewsModal();
+  }
+});
