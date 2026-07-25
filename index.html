@@ -562,70 +562,125 @@
      </div>
     </div>
    </div>
-   <div aria-hidden="true" aria-labelledby="news-modal-title-2" aria-modal="true" class="news-modal" id="news-modal-2" role="dialog">
-    <div class="news-modal-backdrop" data-close-modal>
-    </div>
-    <div class="news-modal-window">
-     <button aria-label="Close window" class="news-modal-close" data-close-modal type="button">
-      &times;
-     </button>
-     <div class="news-modal-header">
-      <p class="news-modal-kicker">
-       Publication &middot; June 2026
-      </p>
-      <h3 id="news-modal-title-2">
-       lymph 2.0
-      </h3>
-      <p class="news-modal-subtitle">
-       A MATLAB library for polytopal discontinuous Galerkin methods
-      </p>
-     </div>
-     <div class="news-modal-content">
-      <div class="news-modal-description">
-       <p>
-        lymph 2.0 introduces p-adaptive algorithms and parallel assembly strategies for high-order discontinuous Galerkin methods on polytopal meshes.
-       </p>
-       <a class="button button-dark modal-button" href="https://arxiv.org/abs/2606.24646" rel="noreferrer" target="_blank">
-        Read the preprint &nearrow;
-       </a>
+   <div
+  id="news-modal-2"
+  class="news-modal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="news-modal-title-2"
+>
+  <div class="news-modal-backdrop" data-close-modal></div>
+
+  <div class="news-modal-window news-modal-window-wide">
+    <button
+      class="news-modal-close"
+      type="button"
+      data-close-modal
+      aria-label="Close window"
+    >
+      ×
+    </button>
+
+    <div class="publication-modal-layout">
+      <div class="publication-modal-image">
+        <img
+          src="assets/lymph-2-news.png"
+          alt="Numerical simulations and adaptive polytopal meshes produced with lymph 2.0"
+        />
       </div>
-      <dl class="news-modal-details">
-       <div>
-        <dt>
-         Year
-        </dt>
-        <dd>
-         2026
-        </dd>
-       </div>
-       <div>
-        <dt>
-         Software
-        </dt>
-        <dd>
-         MATLAB
-        </dd>
-       </div>
-       <div>
-        <dt>
-         Methods
-        </dt>
-        <dd>
-         PolyDG and p-adaptivity
-        </dd>
-       </div>
-       <div>
-        <dt>
-         Status
-        </dt>
-        <dd>
-         Submitted paper
-        </dd>
-       </div>
-      </dl>
-     </div>
+
+      <div class="publication-modal-main">
+        <p class="news-modal-kicker">
+          New publication · June 2026
+        </p>
+
+        <h3 id="news-modal-title-2">
+          lymph 2.0 is out now
+        </h3>
+
+        <p class="publication-modal-date">
+          23 June 2026
+        </p>
+
+        <div class="publication-modal-description">
+          <p>
+            Our latest preprint,
+            <strong>
+              “The lymph 2.0 library: p-adaptive algorithms and parallel
+              assembly strategies for polytopal DG methods”
+            </strong>,
+            is now available on arXiv.
+          </p>
+
+          <p>
+            This work presents a new release of the
+            <strong>lymph 2.0</strong> library, an open-source MATLAB framework
+            for high-order discontinuous Galerkin discretizations on general
+            polytopal meshes.
+          </p>
+
+          <p>
+            The new version supports element-wise polynomial approximation
+            degrees, enabling the construction of
+            <strong>p-adaptive strategies</strong> based on a posteriori error
+            indicators.
+          </p>
+
+          <p>
+            It also introduces a unified assembly framework and dedicated
+            parallel tools for shared-memory computations, improving code
+            modularity, maintainability and computational efficiency.
+          </p>
+        </div>
+
+        <div class="publication-modal-actions">
+          <a
+            class="button button-dark"
+            href="https://arxiv.org/abs/2606.24646"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Read the preprint ↗
+          </a>
+
+          <a
+            class="text-link"
+            href="https://github.com/lymphlib/lymph"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View the code <span>↗</span>
+          </a>
+        </div>
+
+        <dl class="publication-modal-details">
+          <div>
+            <dt>Authors</dt>
+            <dd>
+              C. B. Leimer Saglio, M. Corti, S. Pagani and P. F. Antonietti
+            </dd>
+          </div>
+
+          <div>
+            <dt>Software</dt>
+            <dd>MATLAB</dd>
+          </div>
+
+          <div>
+            <dt>Methods</dt>
+            <dd>PolyDG, p-adaptivity and parallel assembly</dd>
+          </div>
+
+          <div>
+            <dt>Status</dt>
+            <dd>Submitted preprint</dd>
+          </div>
+        </dl>
+      </div>
     </div>
-   </div>
+  </div>
+</div>
    <div aria-hidden="true" aria-labelledby="news-modal-title-3" aria-modal="true" class="news-modal" id="news-modal-3" role="dialog">
     <div class="news-modal-backdrop" data-close-modal>
     </div>
