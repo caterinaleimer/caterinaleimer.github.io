@@ -407,8 +407,29 @@ button { font: inherit; }
 
 .news-modal-window-wide {
   width: min(1120px, 100%);
+  max-height: calc(100vh - 56px);
+
   padding: 0;
-  overflow: hidden;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+.news-modal-window-wide::-webkit-scrollbar {
+  width: 9px;
+}
+
+.news-modal-window-wide::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-modal-window-wide::-webkit-scrollbar-thumb {
+  background: rgba(23, 23, 20, 0.28);
+  border: 3px solid var(--paper);
+  border-radius: 999px;
 }
 
 .publication-modal-horizontal {
