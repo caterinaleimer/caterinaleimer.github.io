@@ -4,13 +4,23 @@
   --ink: #171714;
   --muted: #68675f;
   --line: rgba(23, 23, 20, 0.16);
-  --accent: #c9ff58;
+
+  /* Azzurro tenue principale */
+  --accent: #b9dcec;
+
   --dark: #1d211b;
   --white: #ffffff;
+
   --serif: "Newsreader", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
+
   --max-width: 1240px;
+  --header-height: 88px;
 }
+
+/* =========================================================
+   BASE
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -18,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 28px);
 }
 
 body {
@@ -27,6 +38,7 @@ body {
   font-family: var(--sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body.menu-open {
@@ -39,12 +51,17 @@ a {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 button {
   font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
 }
 
 .sr-only {
@@ -59,22 +76,38 @@ button {
   border: 0;
 }
 
+/* =========================================================
+   HEADER FISSO
+========================================================= */
+
 .site-header {
-  width: min(calc(100% - 48px), var(--max-width));
-  height: 88px;
-  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: var(--header-height);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding-left: max(24px, calc((100% - var(--max-width)) / 2));
+  padding-right: max(24px, calc((100% - var(--max-width)) / 2));
+
+  background: rgba(245, 242, 235, 0.95);
   border-bottom: 1px solid var(--line);
-  position: relative;
-  z-index: 100;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 13px;
+
+  font-size: 0.98rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -82,18 +115,25 @@ button {
 .brand-mark {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+
   display: grid;
   place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
   background: var(--ink);
   color: var(--paper);
+
   font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .main-navigation {
   display: flex;
   align-items: center;
   gap: 28px;
+
   font-size: 0.91rem;
 }
 
@@ -103,72 +143,108 @@ button {
 
 .main-navigation a:not(.nav-cta)::after {
   content: "";
+
   position: absolute;
   left: 0;
   bottom: -5px;
+
   width: 100%;
   height: 1px;
+
   background: currentColor;
+
   transform: scaleX(0);
   transform-origin: right;
+
   transition: transform 0.25s ease;
 }
 
-.main-navigation a:hover::after {
+.main-navigation a:not(.nav-cta):hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
 .nav-cta {
   padding: 10px 18px;
+
   border: 1px solid var(--ink);
   border-radius: 999px;
-  transition: 0.25s ease;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .nav-cta:hover {
-  color: var(--paper);
   background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
 }
 
 .menu-button {
   display: none;
+
+  padding: 8px;
+
   border: 0;
   background: transparent;
-  padding: 8px;
+  cursor: pointer;
 }
 
 .menu-button span:not(.sr-only) {
   display: block;
+
   width: 26px;
   height: 1px;
+
   margin: 6px 0;
+
   background: var(--ink);
-  transition: 0.25s ease;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
+
+/* =========================================================
+   LAYOUT GENERALE
+========================================================= */
 
 .section {
   width: min(calc(100% - 48px), var(--max-width));
   margin: 0 auto;
-  padding: 128px 0;
-}
-
-.hero {
-  min-height: calc(100vh - 88px);
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 80px;
-  padding-top: 70px;
-  padding-bottom: 90px;
+  padding: 118px 0;
 }
 
 .eyebrow {
   margin: 0 0 22px;
+
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: calc(100vh - var(--header-height));
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 72px;
+
+  padding-top: 58px;
+  padding-bottom: 82px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1,
@@ -181,40 +257,55 @@ button {
 }
 
 .hero h1 {
+  max-width: 700px;
   margin: 0;
-  max-width: 760px;
-  font-size: clamp(4.3rem, 8.3vw, 8.8rem);
+
+  /* Nome ridotto */
+  font-size: clamp(3.8rem, 6.4vw, 6.9rem);
 }
 
 .hero-role {
-  margin: 36px 0 0;
-  font-size: 1.08rem;
+  margin: 34px 0 0;
+
+  font-size: 1.05rem;
   font-weight: 500;
+  line-height: 1.55;
 }
 
 .hero-intro {
-  max-width: 590px;
-  margin: 26px 0 0;
+  max-width: 600px;
+  margin: 24px 0 0;
+
   color: var(--muted);
-  font-size: 1.03rem;
+
+  font-size: 1.02rem;
+  line-height: 1.72;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
   gap: 28px;
-  margin-top: 42px;
+
+  margin-top: 40px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 14px 24px;
+
   border-radius: 999px;
+
   font-size: 0.9rem;
   font-weight: 600;
-  transition: transform 0.25s ease, background 0.25s ease;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .button:hover {
@@ -230,20 +321,27 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
-  border-bottom: 1px solid var(--ink);
+
   padding-bottom: 3px;
+
+  border-bottom: 1px solid var(--ink);
+
+  font-weight: 600;
 }
 
 .hero-visual {
   position: relative;
+
   justify-self: end;
+
   width: min(100%, 500px);
 }
 
 .portrait-frame {
   position: relative;
+
   padding: 14px;
+
   border: 1px solid var(--line);
   background: var(--paper-light);
 }
@@ -251,15 +349,19 @@ button {
 .portrait-frame img {
   width: 100%;
   aspect-ratio: 4 / 5;
+
   object-fit: cover;
+
   background: #e7e3da;
 }
 
 .portrait-label {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
+  justify-content: space-between;
+
   padding: 14px 3px 0;
+
   font-size: 0.82rem;
 }
 
@@ -269,13 +371,17 @@ button {
 
 .floating-note {
   position: absolute;
-  left: -95px;
-  bottom: 75px;
-  width: 220px;
+  left: -88px;
+  bottom: 72px;
+
+  width: 215px;
   padding: 22px;
+
   background: var(--accent);
+
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.1);
-  transform: rotate(-4deg);
+
+  transform: rotate(-3deg);
 }
 
 .note-number {
@@ -285,23 +391,34 @@ button {
 
 .floating-note p {
   margin: 32px 0 0;
+
   font-family: var(--serif);
   font-size: 1.22rem;
   line-height: 1.15;
 }
 
+/* =========================================================
+   TITOLI SEZIONI
+========================================================= */
+
 .section-heading {
   display: grid;
   grid-template-columns: 0.35fr 1fr;
   gap: 40px;
+
   margin-bottom: 72px;
 }
 
 .section-heading h2 {
   max-width: 880px;
   margin: 0;
-  font-size: clamp(3.1rem, 6.3vw, 6.5rem);
+
+  font-size: clamp(3.1rem, 6.1vw, 6.3rem);
 }
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about {
   border-top: 1px solid var(--line);
@@ -310,7 +427,8 @@ button {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
-  gap: 120px;
+  gap: 110px;
+
   margin-left: calc(35% + 14px);
 }
 
@@ -330,6 +448,7 @@ button {
 
 .facts div {
   padding: 20px 0;
+
   border-top: 1px solid var(--line);
 }
 
@@ -339,7 +458,9 @@ button {
 
 .facts dt {
   margin-bottom: 5px;
+
   color: var(--muted);
+
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -347,27 +468,35 @@ button {
 
 .facts dd {
   margin: 0;
+
   font-weight: 500;
 }
+
+/* =========================================================
+   RESEARCH
+========================================================= */
 
 .section-dark {
   width: 100%;
   max-width: none;
+
   padding-left: max(24px, calc((100% - var(--max-width)) / 2));
   padding-right: max(24px, calc((100% - var(--max-width)) / 2));
+
   background: var(--dark);
   color: var(--paper);
 }
 
 .section-dark .section-heading {
   max-width: var(--max-width);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .research-list {
   max-width: var(--max-width);
   margin: 0 auto;
+
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -376,23 +505,32 @@ button {
   grid-template-columns: 80px 1fr auto;
   gap: 32px;
   align-items: start;
+
   padding: 42px 0;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  transition: padding 0.25s ease;
+
+  transition:
+    padding 0.25s ease,
+    background 0.25s ease;
 }
 
 .research-card:hover {
-  padding-left: 16px;
   padding-right: 16px;
+  padding-left: 16px;
+
+  background: rgba(255, 255, 255, 0.025);
 }
 
 .card-number {
   color: rgba(255, 255, 255, 0.55);
+
   font-size: 0.78rem;
 }
 
 .research-card h3 {
   margin: 0 0 12px;
+
   font-family: var(--serif);
   font-size: clamp(2rem, 3.4vw, 3.7rem);
   font-weight: 500;
@@ -402,6 +540,7 @@ button {
 .research-card p {
   max-width: 720px;
   margin: 0;
+
   color: rgba(255, 255, 255, 0.68);
 }
 
@@ -409,12 +548,17 @@ button {
   font-size: 1.5rem;
 }
 
+/* =========================================================
+   PUBLICATIONS
+========================================================= */
+
 .split-heading {
   align-items: end;
 }
 
 .split-heading > div {
   grid-column: 1 / -1;
+
   display: grid;
   grid-template-columns: 0.35fr 1fr;
   gap: 40px;
@@ -422,7 +566,9 @@ button {
 
 .split-heading > .text-link {
   grid-column: 2;
+
   justify-self: start;
+
   margin-top: -32px;
 }
 
@@ -434,7 +580,9 @@ button {
   display: grid;
   grid-template-columns: 0.35fr 1fr;
   gap: 40px;
+
   padding: 42px 0;
+
   border-bottom: 1px solid var(--line);
 }
 
@@ -442,7 +590,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: 6px;
+
   color: var(--muted);
+
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -451,6 +601,7 @@ button {
 .publication h3 {
   max-width: 900px;
   margin: 0 0 12px;
+
   font-family: var(--serif);
   font-size: clamp(1.75rem, 3vw, 3.1rem);
   font-weight: 500;
@@ -463,8 +614,11 @@ button {
 
 .publication-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 22px;
+
   margin-top: 18px;
+
   font-size: 0.87rem;
   font-weight: 600;
 }
@@ -475,11 +629,18 @@ button {
 
 .editing-note {
   display: inline-block;
+
   margin: 30px 0 0 35%;
   padding: 10px 14px;
-  background: #fff4c7;
+
+  background: #dceef6;
+
   font-size: 0.8rem;
 }
+
+/* =========================================================
+   NEWS
+========================================================= */
 
 .news {
   border-top: 1px solid var(--line);
@@ -493,17 +654,24 @@ button {
 
 .news-card {
   min-height: 350px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   padding: 28px;
+
   border: 1px solid var(--line);
   background: var(--paper-light);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .news-card:hover {
   transform: translateY(-6px);
+
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
 }
 
@@ -514,11 +682,13 @@ button {
 .news-date {
   display: flex;
   justify-content: space-between;
+
   font-size: 0.75rem;
 }
 
 .news-type {
   margin: 0 0 12px;
+
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -527,6 +697,7 @@ button {
 
 .news-card h3 {
   margin: 0 0 14px;
+
   font-family: var(--serif);
   font-size: 2.1rem;
   font-weight: 500;
@@ -535,27 +706,36 @@ button {
 
 .news-card p:last-child {
   margin-bottom: 0;
+
   color: var(--muted);
 }
 
-.featured p:last-child {
+.news-card.featured p:last-child {
   color: rgba(0, 0, 0, 0.66);
 }
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .section-accent {
   width: 100%;
   max-width: none;
+
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 100px;
+
   padding-left: max(24px, calc((100% - var(--max-width)) / 2));
   padding-right: max(24px, calc((100% - var(--max-width)) / 2));
+
   background: var(--accent);
 }
 
 .contact h2 {
   max-width: 760px;
   margin: 0;
+
   font-size: clamp(3.2rem, 6vw, 6rem);
 }
 
@@ -567,8 +747,11 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   padding-bottom: 4px;
+
   border-bottom: 1px solid var(--ink);
+
   font-size: clamp(1.15rem, 2vw, 1.55rem);
   font-weight: 600;
 }
@@ -581,6 +764,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 22px;
+
   font-size: 0.88rem;
   font-weight: 600;
 }
@@ -589,21 +773,37 @@ button {
   border-bottom: 1px solid var(--ink);
 }
 
+/* =========================================================
+   FOOTER
+========================================================= */
+
 .site-footer {
   min-height: 110px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 max(24px, calc((100% - var(--max-width)) / 2));
+
+  padding-right: max(24px, calc((100% - var(--max-width)) / 2));
+  padding-left: max(24px, calc((100% - var(--max-width)) / 2));
+
   background: var(--ink);
   color: var(--paper);
+
   font-size: 0.82rem;
 }
+
+/* =========================================================
+   ANIMAZIONI
+========================================================= */
 
 .reveal {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
 }
 
 .reveal.visible {
@@ -611,10 +811,22 @@ button {
   transform: translateY(0);
 }
 
+/* =========================================================
+   TABLET
+========================================================= */
+
 @media (max-width: 1000px) {
   .hero {
     grid-template-columns: 1fr;
     gap: 70px;
+
+    padding-top: 68px;
+  }
+
+  .hero h1 {
+    max-width: 850px;
+
+    font-size: clamp(4rem, 10vw, 6.6rem);
   }
 
   .hero-visual {
@@ -622,9 +834,10 @@ button {
   }
 
   .about-grid {
-    margin-left: 0;
     grid-template-columns: 1fr 0.7fr;
     gap: 70px;
+
+    margin-left: 0;
   }
 
   .news-grid {
@@ -641,24 +854,44 @@ button {
   }
 }
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 760px) {
+  :root {
+    --header-height: 74px;
+  }
+
+  html {
+    scroll-padding-top: calc(var(--header-height) + 20px);
+  }
+
   .site-header {
-    width: min(calc(100% - 32px), var(--max-width));
-    height: 74px;
+    height: var(--header-height);
+
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .brand {
-    font-size: 0.87rem;
+    max-width: calc(100% - 60px);
+
+    font-size: 0.86rem;
   }
 
   .brand-mark {
     width: 34px;
     height: 34px;
+
+    font-size: 0.72rem;
   }
 
   .menu-button {
+    position: relative;
+    z-index: 1002;
+
     display: block;
-    z-index: 3;
   }
 
   .menu-button[aria-expanded="true"] span:first-child {
@@ -672,22 +905,33 @@ button {
   .main-navigation {
     position: fixed;
     inset: 0;
+    z-index: 1001;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 24px;
+
     background: var(--paper);
+
     font-family: var(--serif);
     font-size: 2.2rem;
+
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(-12px);
-    transition: 0.25s ease;
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
   }
 
   .main-navigation.open {
     opacity: 1;
     visibility: visible;
+
     transform: translateY(0);
   }
 
@@ -698,31 +942,57 @@ button {
 
   .section {
     width: min(calc(100% - 32px), var(--max-width));
-    padding: 88px 0;
+
+    padding: 84px 0;
   }
 
   .hero {
     min-height: auto;
-    padding-top: 56px;
+
+    grid-template-columns: 1fr;
+    gap: 64px;
+
+    padding-top: 48px;
+    padding-bottom: 78px;
   }
 
   .hero h1 {
-    font-size: clamp(3.7rem, 17vw, 5.5rem);
+    max-width: 100%;
+
+    font-size: clamp(3.15rem, 13.5vw, 4.6rem);
+    line-height: 0.98;
+  }
+
+  .hero-role {
+    margin-top: 28px;
+  }
+
+  .hero-intro {
+    font-size: 0.98rem;
   }
 
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
+    gap: 20px;
   }
 
   .hero-visual {
-    width: calc(100% - 20px);
+    width: calc(100% - 18px);
   }
 
   .floating-note {
-    left: -10px;
-    bottom: 50px;
-    width: 185px;
+    left: -8px;
+    bottom: 44px;
+
+    width: 180px;
+    padding: 18px;
+  }
+
+  .floating-note p {
+    margin-top: 24px;
+
+    font-size: 1.08rem;
   }
 
   .section-heading,
@@ -738,7 +1008,7 @@ button {
 
   .section-heading h2,
   .contact h2 {
-    font-size: clamp(3rem, 14vw, 4.8rem);
+    font-size: clamp(3rem, 13vw, 4.6rem);
   }
 
   .about-grid {
@@ -746,9 +1016,20 @@ button {
     gap: 35px;
   }
 
+  .about-text {
+    font-size: 1.45rem;
+  }
+
   .research-card {
     grid-template-columns: 42px 1fr;
     gap: 14px;
+
+    padding: 32px 0;
+  }
+
+  .research-card:hover {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .research-card .card-arrow {
@@ -761,7 +1042,16 @@ button {
 
   .split-heading > .text-link {
     grid-column: 1;
+
     margin-top: 0;
+  }
+
+  .publication {
+    padding: 34px 0;
+  }
+
+  .publication h3 {
+    font-size: 2rem;
   }
 
   .editing-note {
@@ -776,14 +1066,38 @@ button {
     grid-column: auto;
   }
 
+  .news-card {
+    min-height: 320px;
+  }
+
+  .section-accent {
+    grid-template-columns: 1fr;
+    gap: 64px;
+
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .contact-email {
+    overflow-wrap: anywhere;
+  }
+
   .site-footer {
     min-height: 130px;
+
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
+
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
+
+/* =========================================================
+   ACCESSIBILITÀ
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
