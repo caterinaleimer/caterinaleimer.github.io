@@ -104,7 +104,26 @@ button { font: inherit; }
 .scholar-link { margin-top: 22px; }
 .publication-category { margin-top: 68px; }
 .publication-category:first-of-type { margin-top: 20px; }
-.publication-category-title { margin: 0 0 40px; padding: 18px 24px; background: var(--accent-soft); font-family: var(--serif); font-size: clamp(1.75rem, 2.8vw, 2.75rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; text-align: center; }
+.publication-category-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 150px;
+
+  margin: 0 0 40px;
+  padding: 20px 42px;
+
+  background: var(--accent);
+  border-radius: 24px;
+
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-align: center;
+}
 .publication-year-group { margin-bottom: 54px; }
 .publication-year { margin: 0 0 26px; font-family: var(--sans); font-size: clamp(1.65rem, 2.25vw, 2.35rem); font-weight: 600; line-height: 1; }
 .publication-entry { max-width: 1040px; margin-bottom: 24px; }
@@ -179,7 +198,17 @@ button { font: inherit; }
   .research-card .card-arrow { display: none; }
   .research-card h3 { font-size: 1.75rem; }
   .publication-category { margin-top: 52px; }
-  .publication-category-title { margin-bottom: 32px; padding: 15px 18px; font-size: 1.75rem; text-align: left; }
+  .publication-category-title {
+    min-height: auto;
+  
+    margin-bottom: 32px;
+    padding: 18px 22px;
+  
+    border-radius: 18px;
+  
+    font-size: clamp(1.8rem, 9vw, 2.7rem);
+    text-align: center;
+  }
   .publication-year-group { margin-bottom: 44px; }
   .publication-year { margin-bottom: 22px; font-size: 1.65rem; }
   .publication-entry p { font-size: 0.94rem; line-height: 1.62; }
