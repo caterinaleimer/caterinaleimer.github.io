@@ -176,14 +176,16 @@ button { font: inherit; }
   background: var(--paper-light);
 }
 
-.news-card:hover,
-.news-card.featured:hover {
+.news-grid .news-card:hover,
+.news-grid .news-card:focus-visible {
   background: var(--accent);
   border-color: rgba(23, 23, 20, 0.22);
 
   transform: translateY(-7px) scale(1.025);
 
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.11);
+
+  outline: none;
 }
 
 .news-date {
@@ -219,8 +221,8 @@ button { font: inherit; }
   transition: color 0.28s ease;
 }
 
-.news-card:hover p:last-child,
-.news-card.featured:hover p:last-child {
+.news-grid .news-card:hover p:last-child,
+.news-grid .news-card:focus-visible p:last-child {
   color: rgba(0, 0, 0, 0.68);
 }
 
