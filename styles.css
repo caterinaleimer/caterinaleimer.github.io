@@ -889,3 +889,7 @@ button { font: inherit; }
     justify-self: start;
   }
 }
+
+.page-intro-link {
+  margin-top: 28px;
+}
