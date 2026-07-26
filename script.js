@@ -19,27 +19,6 @@ if (menuButton && navigation) {
   });
 }
 
-const dropdown = document.querySelector(".nav-dropdown");
-const dropdownButton = document.querySelector(".nav-dropdown-button");
-
-function closeDropdown() {
-  if (!dropdown || !dropdownButton) return;
-  dropdown.classList.remove("open");
-  dropdownButton.setAttribute("aria-expanded", "false");
-}
-
-if (dropdown && dropdownButton) {
-  dropdownButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    const isOpen = dropdown.classList.toggle("open");
-    dropdownButton.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!dropdown.contains(event.target)) closeDropdown();
-  });
-}
-
 const currentYear = document.getElementById("current-year");
 if (currentYear) currentYear.textContent = new Date().getFullYear();
 
@@ -100,6 +79,5 @@ modalCloseButtons.forEach((button) => button.addEventListener("click", closeNews
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeNewsModal();
-    closeDropdown();
   }
 });

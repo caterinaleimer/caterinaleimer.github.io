@@ -769,70 +769,6 @@ button { font: inherit; }
   }
 }
 /* =========================================================
-   MULTI-PAGE NAVIGATION
-========================================================= */
-
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-
-.nav-dropdown-button span {
-  transition: transform 0.2s ease;
-}
-
-.nav-dropdown.open .nav-dropdown-button span {
-  transform: rotate(180deg);
-}
-
-.nav-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 16px);
-  right: 0;
-  z-index: 1200;
-  min-width: 190px;
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--paper-light);
-  box-shadow: 0 18px 55px rgba(23, 23, 20, 0.12);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-}
-
-.nav-dropdown.open .nav-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.nav-dropdown-menu a {
-  display: block;
-  padding: 11px 13px;
-  border-radius: 11px;
-}
-
-.nav-dropdown-menu a::after {
-  display: none;
-}
-
-.nav-dropdown-menu a:hover {
-  background: var(--accent-soft);
-}
-
-/* =========================================================
    INNER PAGES
 ========================================================= */
 
@@ -865,41 +801,91 @@ button { font: inherit; }
 }
 
 @media (max-width: 760px) {
-  .nav-dropdown {
-    width: min(280px, calc(100% - 40px));
-    text-align: center;
-  }
-
-  .nav-dropdown-button {
-    justify-content: center;
-    width: 100%;
-    font-family: var(--serif);
-    font-size: 2rem;
-  }
-
-  .nav-dropdown-menu {
-    position: static;
-    width: 100%;
-    min-width: 0;
-    margin-top: 12px;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-  }
-
-  .nav-dropdown.open .nav-dropdown-menu {
-    display: block;
-  }
-
-  .nav-dropdown-menu a {
-    font-family: var(--sans);
-    font-size: 1rem;
-  }
 
   .page-intro {
     padding-top: 58px;
     padding-bottom: 54px;
+  }
+}
+
+/* =========================================================
+   TALKS PAGE
+========================================================= */
+
+.talks-section {
+  padding-top: 70px;
+}
+
+.talks-list {
+  border-top: 1px solid var(--line);
+}
+
+.talk-entry {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 34px;
+  align-items: start;
+
+  padding: 34px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.talk-date {
+  color: var(--muted);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.talk-entry h2 {
+  margin: 0 0 9px;
+
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.talk-meta {
+  margin: 0 0 10px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+.talk-description {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.talk-link {
+  white-space: nowrap;
+
+  padding-bottom: 3px;
+
+  border-bottom: 1px solid var(--ink);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .talk-entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .talk-link {
+    justify-self: start;
   }
 }
