@@ -1,60 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Academic website of Caterina B. Leimer Saglio, PhD student." name="description">
-  <meta content="#f5f2eb" name="theme-color">
-  <title>
-   Caterina B. Leimer Saglio
-  </title>
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
- </head>
- <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic website of Caterina B. Leimer Saglio, PhD student in numerical analysis and computational neuroscience." />
+  <meta name="theme-color" content="#f5f2eb" />
+  <meta property="og:title" content="Caterina B. Leimer Saglio" />
+  <meta property="og:description" content="Academic website of Caterina B. Leimer Saglio, PhD student in numerical analysis and computational neuroscience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://caterinaleimer.github.io/" />
+  <meta property="og:image" content="https://caterinaleimer.github.io/assets/caterinaleimer.jpeg" />
+  <title>Caterina B. Leimer Saglio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link href="styles.css?v=20260726-1" rel="stylesheet" />
+</head>
+<body>
   <header class="site-header">
-   <a aria-label="Back to homepage" class="brand" href="#home">
-    <span class="brand-mark">
-     CL
-    </span>
-    <span class="brand-name">
-     Caterina B. Leimer Saglio
-    </span>
-   </a>
-   <button aria-controls="main-navigation" aria-expanded="false" class="menu-button" type="button">
-    <span>
-    </span>
-    <span>
-    </span>
-    <span class="sr-only">
-     Open navigation
-    </span>
-   </button>
-   <nav aria-label="Main navigation" class="main-navigation" id="main-navigation">
-    <a href="#about">
-     About
+    <a class="brand" href="index.html" aria-label="Back to homepage">
+      <span class="brand-mark">CL</span>
+      <span class="brand-name">Caterina B. Leimer Saglio</span>
     </a>
-    <a href="#research">
-     Research
-    </a>
-    <a href="#publications">
-     Publications
-    </a>
-    <a href="#news">
-     News
-    </a>
-    <a href="#contact">
-     Contact
-    </a>
-    <a class="nav-cta" href="assets/CV.pdf" rel="noreferrer" target="_blank">
-     CV
-    </a>
-   </nav>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span></span>
+      <span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+
+    <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-button" type="button" aria-expanded="false" aria-controls="site-pages-menu">
+          Pages <span aria-hidden="true">⌄</span>
+        </button>
+        <div id="site-pages-menu" class="nav-dropdown-menu">
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+        </div>
+      </div>
+
+      <a href="index.html#news">News</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noreferrer">CV</a>
+    </nav>
   </header>
-  <main>
-   <section class="hero section" id="home">
+  <main id="top">
+<section class="hero section" id="home">
     <div class="hero-copy reveal">
      <p class="eyebrow">
       Mathematical and numerical modelling of the brain
@@ -74,7 +68,7 @@
           neurological disorders and their interaction with metabolic and protein-spreading dynamics.
      </p>
      <div class="hero-actions">
-      <a class="button button-dark" href="#research">
+      <a class="button button-dark" href="research.html">
        Explore my research
       </a>
       <a class="text-link" href="#contact">
@@ -107,7 +101,7 @@
      </div>
     </div>
    </section>
-   <section class="about section" id="about">
+<section class="about section" id="about">
     <div class="section-heading reveal">
      <p class="eyebrow">
       About
@@ -167,308 +161,7 @@
      </dl>
     </div>
    </section>
-   <section class="research section section-dark" id="research">
-    <div class="section-heading reveal">
-     <p class="eyebrow">
-      Research interests
-     </p>
-     <h2>
-      From neuronal activity to brain multiphysics.
-     </h2>
-    </div>
-    <div class="research-list">
-     <article class="research-card research-card-project reveal">
-  <span class="card-number">01</span>
-
-  <div class="research-project-content">
-    <div class="research-project-text">
-      <p class="research-project-label">
-        Research project
-      </p>
-
-      <h3>The BraiNum Project</h3>
-
-      <p>
-        My work is part of the
-        <a
-          href="https://brainum.mox.polimi.it/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          BraiNum project
-        </a>.
-        BraiNum aims to develop mathematical models for the physiological and
-        pathological functions of the brain and central nervous system.
-      </p>
-
-      <p>
-        The project is developed at the
-        <a
-          href="https://mox.polimi.it/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Laboratory for Modeling and Scientific Computing (MOX)
-        </a>
-        of the 
-      <a
-          href="https://www.mate.polimi.it/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Department of Mathematics
-        </a>
-       , Politecnico di Milano.
-      </p>
-
-      <a
-        class="research-project-link"
-        href="https://brainum.mox.polimi.it/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Discover the project ↗
-      </a>
-    </div>
-
-    <div class="research-project-image">
-      <img
-        src="assets/bbrain.png"
-        alt="BraiNum project logo"
-      />
-    </div>
-  </div>
-</article>
-     <article class="research-card reveal">
-      <span class="card-number">
-       01
-      </span>
-      <div>
-       <h3>
-        Brain Electrophysiology
-       </h3>
-       <p>
-        Mathematical and numerical modelling of neuronal electrical activity, with emphasis on physiological propagation and pathological events such as epileptic seizures.
-       </p>
-      </div>
-      <span class="card-arrow">
-       &nearrow;
-      </span>
-     </article>
-     <article class="research-card reveal">
-      <span class="card-number">
-       02
-      </span>
-      <div>
-       <h3>
-        Electro-metabolic Coupling
-       </h3>
-       <p>
-        Coupled models connecting membrane potentials, ion concentrations, oxygen, ATP dynamics and tissue swelling in cerebral ischemia.
-       </p>
-      </div>
-      <span class="card-arrow">
-       &nearrow;
-      </span>
-     </article>
-     <article class="research-card reveal">
-      <span class="card-number">
-       03
-      </span>
-      <div>
-       <h3>
-        Protein Spreading
-       </h3>
-       <p>
-        Investigation of the interaction between abnormal electrophysiological activity and the spreading of pathological proteins in the brain.
-       </p>
-      </div>
-      <span class="card-arrow">
-       &nearrow;
-      </span>
-     </article>
-     <article class="research-card reveal">
-      <span class="card-number">
-       04
-      </span>
-      <div>
-       <h3>
-        Advanced Numerical Methods
-       </h3>
-       <p>
-        High-order discontinuous Galerkin methods on polytopal meshes, adaptive strategies and domain decomposition techniques for large-scale simulations.
-       </p>
-      </div>
-      <span class="card-arrow">
-       &nearrow;
-      </span>
-     </article>
-    </div>
-   </section>
-   <section class="publications section" id="publications">
-    <div class="section-heading publications-heading reveal">
-     <p class="eyebrow">
-      Scientific output
-     </p>
-     <div>
-      <h2>
-       Publications.
-      </h2>
-      <a class="text-link scholar-link" href="https://scholar.google.com/citations?user=b48SEQsAAAAJ&hl=it&oi=ao" rel="noreferrer" target="_blank">
-       Google Scholar
-       <span>
-        &nearrow;
-       </span>
-      </a>
-     </div>
-    </div>
-    <div class="publication-category reveal">
-     <h3 class="publication-category-title">
-      Submitted Papers
-     </h3>
-     <div class="publication-year-group">
-      <h4 class="publication-year">
-       2026
-      </h4>
-      <article class="publication-entry">
-       <p>
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        , Corti, M., Pagani, S. and Antonietti, P.F.
-        <a href="https://arxiv.org/abs/2606.24646" rel="noreferrer" target="_blank">
-         The lymph 2.0 library: p-adaptive algorithms and parallel assembly strategies for polytopal DG methods.
-        </a>
-        <em>
-         arXiv:2606.24646.
-        </em>
-       </p>
-      </article>
-     </div>
-     <div class="publication-year-group">
-      <h4 class="publication-year">
-       2025
-      </h4>
-      <article class="publication-entry">
-       <p>
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        , Corti, M., Pagani, S. and Antonietti, P.F.
-        <a href="https://arxiv.org/abs/2511.10369" rel="noreferrer" target="_blank">
-         A novel mathematical and computational framework of amyloid-beta triggered seizure dynamics in Alzheimer&rsquo;s disease.
-        </a>
-        <em>
-         arXiv:2511.10369.
-        </em>
-       </p>
-      </article>
-      <article class="publication-entry">
-       <p>
-        Daniele, F.,
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        , Pagani, S. and Antonietti, P.F.
-        <a href="https://arxiv.org/abs/2509.22863" rel="noreferrer" target="_blank">
-         Mathematical and numerical modeling of coupled oxygen dynamics and neuronal electrophysiology.
-        </a>
-        <em>
-         arXiv:2509.22863.
-        </em>
-       </p>
-      </article>
-     </div>
-    </div>
-    <div class="publication-category reveal">
-     <h3 class="publication-category-title">
-      Peer-Reviewed Journal Papers
-     </h3>
-     <div class="publication-year-group">
-      <h4 class="publication-year">
-       2026
-      </h4>
-      <article class="publication-entry">
-       <p>
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        , Pagani, S., Corti, M. and Antonietti, P.F.
-        <a href="https://www.sciencedirect.com/science/article/pii/S0898122125005231" rel="noreferrer" target="_blank">
-         A high-order discontinuous Galerkin method for the numerical modeling of epileptic seizures.
-        </a>
-        <em>
-         Computers & Mathematics with Applications
-        </em>
-        , 205, 112&ndash;131 (2026).
-       </p>
-      </article>
-     </div>
-     <div class="publication-year-group">
-      <h4 class="publication-year">
-       2025
-      </h4>
-      <article class="publication-entry">
-       <p>
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        , Pagani, S. and Antonietti, P.F.
-        <a href="https://www.sciencedirect.com/science/article/pii/S0045782525005213" rel="noreferrer" target="_blank">
-         A p-adaptive polytopal discontinuous Galerkin method for high-order approximation of brain electrophysiology.
-        </a>
-        <em>
-         Computer Methods in Applied Mechanics and Engineering
-        </em>
-        , 446, 118249 (2025).
-       </p>
-      </article>
-     </div>
-    </div>
-    <div class="publication-category reveal">
-     <h3 class="publication-category-title">
-      Conference Proceedings
-     </h3>
-     <div class="publication-year-group">
-      <h4 class="publication-year">
-       2025
-      </h4>
-      <article class="publication-entry">
-       <p>
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        , Pagani, S. and Antonietti, P.F.
-        <span class="publication-title">
-         A massively parallel non-overlapping Schwarz preconditioner for PolyDG methods in brain electrophysiology.
-        </span>
-       </p>
-      </article>
-     </div>
-    </div>
-    <div class="publication-category reveal">
-     <h3 class="publication-category-title">
-      Theses
-     </h3>
-     <div class="publication-year-group">
-      <h4 class="publication-year">
-       2023
-      </h4>
-      <article class="publication-entry">
-       <p>
-        <strong>
-         Leimer Saglio, C.B.
-        </strong>
-        <span class="publication-title">
-         An adaptive discontinuous Galerkin method for the numerical modeling of epileptic seizures.
-        </span>
-        Master Thesis in Mathematical Engineering: Computational Science in Engineering (2023).
-       </p>
-      </article>
-     </div>
-    </div>
-   </section>
-   <section class="news section" id="news">
+<section class="news section" id="news">
     <div class="section-heading reveal">
      <p class="eyebrow">
       Latest news
@@ -552,7 +245,7 @@
      </article>
     </div>
    </section>
-   <div aria-hidden="true" aria-labelledby="news-modal-title-1" aria-modal="true" class="news-modal" id="news-modal-1" role="dialog">
+<div aria-hidden="true" aria-labelledby="news-modal-title-1" aria-modal="true" class="news-modal" id="news-modal-1" role="dialog">
     <div class="news-modal-backdrop" data-close-modal>
     </div>
     <div class="news-modal-window">
@@ -616,7 +309,7 @@
      </div>
     </div>
    </div>
-   <div aria-hidden="true" aria-labelledby="news-modal-title-2" aria-modal="true" class="news-modal" id="news-modal-2" role="dialog">
+<div aria-hidden="true" aria-labelledby="news-modal-title-2" aria-modal="true" class="news-modal" id="news-modal-2" role="dialog">
     <div class="news-modal-backdrop" data-close-modal>
     </div>
     <div class="news-modal-window news-modal-window-wide">
@@ -723,7 +416,7 @@
      </div>
     </div>
    </div>
-   <div aria-hidden="true" aria-labelledby="news-modal-title-3" aria-modal="true" class="news-modal" id="news-modal-3" role="dialog">
+<div aria-hidden="true" aria-labelledby="news-modal-title-3" aria-modal="true" class="news-modal" id="news-modal-3" role="dialog">
     <div class="news-modal-backdrop" data-close-modal>
     </div>
     <div class="news-modal-window">
@@ -784,7 +477,7 @@
      </div>
     </div>
    </div>
-   <section class="contact section section-accent" id="contact">
+<section class="contact section section-accent" id="contact">
     <div class="contact-copy reveal">
      <p class="eyebrow">
       Contact
@@ -846,17 +539,9 @@
    </section>
   </main>
   <footer class="site-footer">
-   <p>
-    &copy;
-    <span id="current-year">
-    </span>
-    Caterina B. Leimer Saglio
-   </p>
-   <a href="#home">
-    Back to top &uarr;
-   </a>
+    <p>© <span id="current-year"></span> Caterina B. Leimer Saglio</p>
+    <a href="#top">Back to top ↑</a>
   </footer>
-  <script src="script.js">
-  </script>
- </body>
+  <script src="script.js?v=20260726-1"></script>
+</body>
 </html>
