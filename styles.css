@@ -1135,3 +1135,25 @@ button { font: inherit; }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   CLICKABLE RESEARCH CARDS
+   ========================================================= */
+
+.research-card-clickable {
+  cursor: pointer;
+}
+
+.research-card-clickable .card-arrow {
+  transition: transform 0.25s ease;
+}
+
+.research-card-clickable:hover .card-arrow {
+  transform: translate(4px, -4px);
+}
+
+.research-card-clickable:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -1px;
+}
