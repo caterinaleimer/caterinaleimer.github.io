@@ -63,17 +63,21 @@ button { font: inherit; }
   content: "";
   position: absolute;
   top: 50%;
-  right: -180px;
+  left: -420px;
+  right: auto;
   z-index: -1;
 
-  width: min(75vw, 950px);
+  width: min(110vw, 1450px);
   aspect-ratio: 2048 / 1325;
 
   background: url("assets/logo_.png") center / contain no-repeat;
 
-  opacity: 0.18;
+  opacity: 0.42;
   transform: translateY(-50%);
   pointer-events: none;
+}
+.hero-visual {
+  width: min(100%, 390px);
 }
 .hero-copy { position: relative; z-index: 2; }
 .hero h1 { max-width: 640px; margin: 0; font-size: clamp(3.25rem, 5vw, 5.35rem); }
