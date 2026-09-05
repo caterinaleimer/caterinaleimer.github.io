@@ -53,8 +53,28 @@ button { font: inherit; }
 .section { width: min(calc(100% - 48px), var(--max-width)); margin: 0 auto; padding: 100px 0; }
 .eyebrow { margin: 0 0 18px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .hero h1, .section-heading h2, .contact h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.035em; line-height: 1; }
-
 .hero { min-height: calc(100vh - var(--header-height)); display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 68px; padding-top: 54px; padding-bottom: 76px; }
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -180px;
+  z-index: -1;
+
+  width: min(75vw, 950px);
+  aspect-ratio: 2048 / 1325;
+
+  background: url("assets/logo_.png") center / contain no-repeat;
+
+  opacity: 0.18;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 .hero-copy { position: relative; z-index: 2; }
 .hero h1 { max-width: 640px; margin: 0; font-size: clamp(3.25rem, 5vw, 5.35rem); }
 .hero-role { margin: 30px 0 0; font-size: 1.03rem; font-weight: 500; line-height: 1.55; }
