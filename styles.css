@@ -1258,11 +1258,15 @@ button { font: inherit; }
   background: rgba(0, 0, 0, 0.22);
 }
 
-.research-project-logo img {
+.research-project-image .research-project-logo img {
   width: 100%;
   height: 100%;
+  max-width: none;
+  aspect-ratio: auto;
 
   object-fit: contain;
+
+  border-radius: 0;
 }
 
 @media (max-width: 900px) {
